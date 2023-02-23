@@ -1,24 +1,20 @@
-import { NavigationContainer} from '@react-navigation/native';
-import { createStackNavigator } from '@react-navigation/stack';
+import { StatusBar } from 'expo-status-bar';
+import { StyleSheet, Text, View } from 'react-native';
 
-import Home from './Screens/Home';
-import Detail from './Screens/Detail';
-
-const Stack = createStackNavigator();
-
-export default function App(){
+export default function App() {
   return (
-    <NavigationContainer>
-      <Stack.Navigator screenOptions={{headerShown: false}}>
-        <Stack.Screen
-          name='Home'
-          component={Home}
-        />
-        <Stack.Screen
-          name='Detail'
-          component={Detail}
-        />
-      </Stack.Navigator>
-    </NavigationContainer>
-  )
+    <View style={styles.container}>
+        {/* Today's Tasks */}
+        <View style={styles.tasksWrapper}> 
+          <Text style={styles.sectionTitle}>Today's tasks</Text>
+        </View>
+    </View>
+  );
 }
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#fff',
+  },
+});
